@@ -26,7 +26,46 @@ A Laravel package for interacting with the Listmonk API.
 
 ## Usage
 
-### Facade
+### Example: Manage Subscribers
+
+Get all subscribers:
+
+```php
+
+use Theafolayan\ListmonkLaravel\Facades\Listmonk;
+
+$subscribers = Listmonk::getSubscribers();
+
+```
+
+### Add a subscriber
+
+```php
+$newSubscriber = Listmonk::createSubscriber([
+    'email' => 'john.doe@example.com',
+    'name' => 'John Doe',
+    'status' => 'enabled',
+]);
+```
+
+### Example: Manage Lists
+
+Get all lists:
+
+```php
+$lists = Listmonk::getLists();
+```
+
+### Create a new list
+
+```php
+$newList = Listmonk::createList([
+    'name' => 'Weekly Newsletter',
+    'description' => 'Updates and news every week.',
+]);
+```
+
+## Facade
 
 You can use the `Listmonk` facade to interact with the Listmonk API:
 
@@ -67,6 +106,8 @@ class YourService
 - `createSubscriber(array $data)`
 - `getLists()`
 - `createList(array $data)`
+
+Usage
 
 ## License
 
