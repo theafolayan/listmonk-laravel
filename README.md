@@ -19,9 +19,9 @@ A Laravel package for interacting with the [Listmonk API](https://listmonk.app/d
 3. Configure your `.env` file with the following variables:
 
     ```env
-    LISTMONK_BASE_URL=http://localhost:9000
-    LISTMONK_USERNAME=admin
-    LISTMONK_PASSWORD=admin
+    LISTMONK_BASE_URL=
+    LISTMONK_API_USERE=
+    LISTMONK_API_TOKEN=
     ```
 
 ## Usage

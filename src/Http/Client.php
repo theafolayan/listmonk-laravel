@@ -12,8 +12,8 @@ class Client
     {
         $this->client = new GuzzleClient([
             'base_uri' => config('listmonk.base_url'),
-            'auth' => [config('listmonk.username'), config('listmonk.password')],
             'headers' => [
+                'Authorization' => 'token ' . config('listmonk.api_user') . ':' . config('listmonk.api_token'),
                 'Accept' => 'application/json',
             ],
         ]);
