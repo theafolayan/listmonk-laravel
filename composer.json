@@ -1,0 +1,21 @@
+{
+  "name": "theafolayan/listmonk-laravel",
+  "description": "A Laravel package for interacting with the Listmonk API",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Theafolayan\\ListmonkLaravel\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "theafolayan",
+      "email": "theafolayan@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.0",
+    "guzzlehttp/guzzle": "^7.0"
+  }
+}
