@@ -2,6 +2,7 @@
   "name": "theafolayan/listmonk-laravel",
   "description": "A Laravel package for interacting with the Listmonk API",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Theafolayan\\ListmonkLaravel\\": "src/"
@@ -13,9 +14,20 @@
       "email": "theafolayan@gmail.com"
     }
   ],
-  "minimum-stability": "stable",
   "require": {
     "php": "^8.0",
     "guzzlehttp/guzzle": "^7.0"
-  }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Theafolayan\\ListmonkLaravel\\ListmonkServiceProvider"
+      ],
+      "aliases": {
+        "Listmonk": "Theafolayan\\ListmonkLaravel\\Facades\\Listmonk"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
