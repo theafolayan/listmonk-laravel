@@ -107,8 +107,14 @@ class YourService
 - `getLists()`
 - `createList(array $data)`
 
-Usage
+## Contributing
+
+Contributions are welcome! To contribute:
+
+- Fork the repository.
+- Create a feature branch.
+- Submit a pull request.
 
 ## License
 
-This package is open-sourced software licensed under the MIT license.
+This package is open-sourced software licensed under the [MIT license](https://opensource.org/license/mit).
