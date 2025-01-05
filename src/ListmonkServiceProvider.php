@@ -19,6 +19,6 @@ class ListmonkServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/Config/listmonk.php' => config_path('listmonk.php'),
-        ], 'config');
+        ], 'listmonk-config');
     }
 }
