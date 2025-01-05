@@ -1,6 +1,6 @@
 # Listmonk Laravel
 
-A Laravel package for interacting with the Listmonk API.
+A Laravel package for interacting with the [Listmonk API](https://listmonk.app/docs/apis/apis/).
 
 ## Installation
 
