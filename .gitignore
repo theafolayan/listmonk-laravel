@@ -1,0 +1,15 @@
+# Laravel & PHP
+/vendor/
+/.env
+.phpunit.result.cache
+
+# Laravel package development
+/.idea/
+/.phpstorm.meta.php
+/.vscode/
+/_ide_helper.php
+/_ide_helper_models.php
+/.php_cs.cache
+
+# Composer
+composer.lock
