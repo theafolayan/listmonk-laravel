@@ -3,6 +3,7 @@
   "description": "A Laravel package for interacting with the Listmonk API",
   "type": "library",
   "license": "MIT",
+  "version": "1.2.0",
   "autoload": {
     "psr-4": {
       "Theafolayan\\ListmonkLaravel\\": "src/"
