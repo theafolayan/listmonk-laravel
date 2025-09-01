@@ -20,7 +20,7 @@ A Laravel package for interacting with the [Listmonk API](https://listmonk.app/d
 
     ```env
     LISTMONK_BASE_URL=
-    LISTMONK_API_USERE=
+    LISTMONK_API_USER=
     LISTMONK_API_TOKEN=
     ```
 
