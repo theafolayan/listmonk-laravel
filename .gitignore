@@ -13,3 +13,6 @@
 
 # Composer
 composer.lock
+
+# PHPUnit
+/.phpunit.cache/

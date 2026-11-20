@@ -2,6 +2,11 @@
 
 A Laravel package for interacting with the [Listmonk API](https://listmonk.app/docs/apis/apis/).
 
+## Requirements
+
+- PHP 8.0 or newer
+- Laravel 8 to 13 (the test suite runs against Laravel 10, 11, 12 and 13)
+
 ## Installation
 
 1. Install the package via Composer:
