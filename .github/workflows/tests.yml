@@ -1,0 +1,50 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Laravel 10 and 11 no longer receive security fixes, so every release
+          # carries open advisories and Composer refuses to resolve them unless
+          # blocking is switched off. They stay in the matrix for existing apps.
+          - { laravel: '10.*', testbench: '8.*', php: '8.2', eol: true }
+          - { laravel: '10.*', testbench: '8.*', php: '8.3', eol: true }
+          - { laravel: '11.*', testbench: '9.*', php: '8.2', eol: true }
+          - { laravel: '11.*', testbench: '9.*', php: '8.4', eol: true }
+          - { laravel: '12.*', testbench: '10.*', php: '8.2' }
+          - { laravel: '12.*', testbench: '10.*', php: '8.4' }
+          - { laravel: '13.*', testbench: '11.*', php: '8.3' }
+          - { laravel: '13.*', testbench: '11.*', php: '8.4' }
+
+    name: Laravel ${{ matrix.laravel }} on PHP ${{ matrix.php }}
+
+    env:
+      COMPOSER_NO_SECURITY_BLOCKING: ${{ matrix.eol && '1' || '0' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require "illuminate/support:${{ matrix.laravel }}" --no-interaction --no-update
+          composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
+          composer update --prefer-dist --no-interaction --no-progress
+
+      - name: Run tests
+        run: vendor/bin/phpunit
